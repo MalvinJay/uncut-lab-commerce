@@ -4,16 +4,16 @@ import MainFooter from '../Footer/MainFooter'
 
 interface LayoutProps {
     children: React.ReactNode;
-    title: String
+    title: string
 }
 
 const AppLayout: React.FC<LayoutProps> = ({ children, title }) => {
     return (
         <>
             <MainHeader />
-            <main className='min-h-[500px]'>
-                {children}
-            </main>
+                <main className='min-h-[500px] bg-white'>
+                    {children}
+                </main>
             <MainFooter />
         </>
     )

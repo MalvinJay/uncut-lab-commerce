@@ -22,13 +22,12 @@ const breadcrumbList = [
   },
 ];
 
-const Home = () => {
+const Products = () => {
   const [selected, setselected] = useState(sortList[0]);
 
   const handleSelection = (item: SortInterface) => {
-    console.log('Selected Items:', item)
     setselected(item)
-    return undefined;
+    return;
   }
 
   return (
@@ -83,4 +82,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default Products;

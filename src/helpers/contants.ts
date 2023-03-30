@@ -114,3 +114,21 @@ export const contact = [
         name: "2 Maple Street, Boston, MA 89898"
     }
 ];
+
+/**
+* Filter 
+*/
+export const sortList = [
+    {
+        id: 1,
+        name: "Newest",
+        value: "new",
+        unavailable: false
+    },
+    {
+        id: 2,
+        name: "Trending",
+        value: "trending",
+        unavailable: false
+    }
+];

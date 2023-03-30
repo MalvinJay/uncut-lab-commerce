@@ -9,5 +9,7 @@ const roboto = Figtree({
 })
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <main className={roboto.className}><Component {...pageProps} /></main>
+  return (
+    <main className={roboto.className}><Component {...pageProps} /></main>
+  )
 }

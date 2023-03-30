@@ -4,23 +4,23 @@ import { Popover, Transition } from '@headlessui/react'
 interface DropdownProps {
     children: React.ReactNode;
     dropdownButton: React.ReactNode,
-    position: String,
-    triggerState: String,
+    position?: '-translate-x-1/4' | '-translate-x-2/4' | '-translate-x-3/4',
+    dropdownWidth: string,
+    triggerState: string
 }
 
 const Dropdown: React.FC<DropdownProps> = ({ 
     children, 
     dropdownButton, 
     position='-translate-x-3/4',
+    dropdownWidth='max-w-[15rem]',
     triggerState=''
 }) => {
     return (
         <Popover>
             {({ open }) => (
                 <>
-                    <Popover.Button
-                        className={`${open ? triggerState : ''} group outline-none`}
-                    >
+                    <Popover.Button className={`${open ? triggerState : ''} group outline-none`}>
                         {dropdownButton}
                     </Popover.Button>
 
@@ -33,7 +33,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                         leaveFrom="opacity-100 translate-y-0"
                         leaveTo="opacity-0 translate-y-1"
                     >
-                        <Popover.Panel className={`${position} absolute z-10 mt-3 mr-10 w-screen max-w-[15rem] transform px-4 sm:px-0`}>
+                        <Popover.Panel className={`${position} ${dropdownWidth} absolute z-10 mt-3 mr-10 w-screen transform px-4 sm:px-0`}>
                             <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                                 {children}
                             </div>
