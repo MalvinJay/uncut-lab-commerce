@@ -132,3 +132,20 @@ export const sortList = [
         unavailable: false
     }
 ];
+
+/**
+* Home
+*/
+export const homeBreadcrumb = [
+    {
+      id: 1,
+      name: "Home",
+      link: "/"
+    },
+    {
+      id: 2,
+      name: "Products",
+      link: "/products"
+    },
+  ];
+

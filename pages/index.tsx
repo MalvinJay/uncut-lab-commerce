@@ -1,32 +1,19 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
-import { sortList } from '@/src/helpers'
+import { homeBreadcrumb, sortList } from '@/src/helpers'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
-
 import { SortInterface } from '@/src/interfaces'
 
 import AppLayout from '@/src/components/Layout/AppLayout/AppLayout'
 import Dropdown from '@/src/components/common/Dropdown/Dropdown'
 import BreadCrumb from '@/src/components/common/Breadcrumb/Breadcrumb'
-
-const breadcrumbList = [
-  {
-    id: 1,
-    name: "Home",
-    link: "/"
-  },
-  {
-    id: 2,
-    name: "Products",
-    link: "/products"
-  },
-];
+import ProductList from '@/src/components/ProductList/ProductList'
+import { productsList } from '@/src/reducers/products'
 
 const Home = () => {
   const [selected, setselected] = useState(sortList[0]);
 
   const handleSelection = (item: SortInterface) => {
-    console.log('Selected Items:', item)
     setselected(item)
     return undefined;
   }
@@ -43,7 +30,7 @@ const Home = () => {
       <AppLayout title="home">
         <section className='bg-white min-h-screen max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           {/* Page breadcrumb goes here.. */}
-          <BreadCrumb list={breadcrumbList} />
+          <BreadCrumb list={homeBreadcrumb} />
 
           <div className='flex justify-between items-center py-8'>
             <h2 className="text-3xl font-bold">All Products</h2>
@@ -77,6 +64,8 @@ const Home = () => {
             </div>
           </div>
 
+          {/* Products */}
+          <ProductList products={productsList} />
         </section>
       </AppLayout>
     </>

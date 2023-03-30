@@ -1,22 +1,23 @@
 import { ProductTypes } from '../types';
 
 export interface ProductImage {
-  id: number;
+  // id: number;
   src: string;
-  alt: string;
+  // alt: string;
 }
 
 export interface Product {
   id: number;
   name: string;
   slug: string;
+  tag: string;
+  category: string;
+  currency: string;
   date_created: string;
   description: string;
   price: string;
-  regular_price: string;
-  sale_price: string;
-  on_sale: boolean;
-  related_ids: number[];
+  rating: number;
+  stock: number;
   images: ProductImage[];
 }
 

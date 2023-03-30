@@ -33,7 +33,7 @@ const Products = () => {
   return (
     <>
       <Head>
-        <title>Home | Uncut Lab Commerce</title>
+        <title>Products | Uncut Lab Commerce</title>
         <meta name="description" content="Food on fleek" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
