@@ -41,8 +41,8 @@ const Products = () => {
         <link rel="icon" href="/logo.png" />
       </Head>
 
-      <AppLayout title="home">
-        <section className='bg-white min-h-screen max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
+      <AppLayout>
+        <section className='bg-white min-h-screen max-w-6xl mx-auto px-4'>
           {/* Page breadcrumb goes here.. */}
           <BreadCrumb list={breadcrumbList} />
 

@@ -3,14 +3,14 @@ import { Cart } from '../../actions';
 import CartItem from './CartItem';
 
 interface CartListProps {
-    carts: Cart[];
+    cart: Cart[];
 }
   
-const CartList: React.FC<CartListProps> = ({ carts }) => {
+const CartList: React.FC<CartListProps> = ({ cart }) => {
     return (
         <section className='grid grid-cols pb-6 md:pb-12'>
-            {carts.map((cart) => (
-                <CartItem cart={cart} key={cart.id} />
+            {cart.map((item) => (
+                <CartItem key={item?.id} cart={item} />
             ))}
         </section>
     );

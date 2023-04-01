@@ -9,7 +9,6 @@ import AppLayout from '@/src/components/Layout/AppLayout/AppLayout'
 import BreadCrumb from '@/src/components/common/Breadcrumb/Breadcrumb'
 import CartList from '@/src/components/Cart/CartList'
 import CartSummary from '@/src/components/Cart/CartSummary';
-import Image from 'next/image';
 
 const breadcrumbList = [
   {
@@ -34,10 +33,9 @@ const Cart = () => {
         <link rel="icon" href="/logo.png" />
       </Head>
 
-      <AppLayout title="home">
-        <section className='bg-white min-h-screen max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
+      <AppLayout>
+        <section className='bg-white min-h-screen max-w-6xl mx-auto px-4'>
           <BreadCrumb list={breadcrumbList} />
-
 
           <div className='md:flex items-start gap-x-4 sm:gap-x-8 lg:gap-x-20'>
             <div className="w-full md:w-2/3">
@@ -49,8 +47,7 @@ const Cart = () => {
                 </div>
               </div>
 
-              {/* Products */}
-              <CartList carts={cartList} />
+              <CartList cart={cartList} />
 
               <div className='flex justify-between items-center text-base font-medium text-[#6fab94] pb-12 md:pb-16'>
                 <span className='inline-flex items-center space-x-1 group'>
@@ -63,15 +60,9 @@ const Cart = () => {
             </div>
 
             <div className="w-full md:w-1/3 mt-6 h-full md:mt-8">
-              <CartSummary info={cartSummary} />
-
-              <div className='py-5'>
-                <p className='text-center font-semibold flex items-center justify-center space-x-2'>
-                  <Image src="/assets/images/connect.png" width={17} height={17} alt="connect" />
-                  <span className='text-gray-500'>Need Help?</span>
-                  <button className='text-[#6fab94]'>Chat Now</button>
-                </p>
-              </div>
+              <CartSummary info={cartSummary}>
+                <></>
+              </CartSummary>
             </div>
           </div>
         </section>

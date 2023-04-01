@@ -13,7 +13,7 @@ const BreadCrumb: React.FC<BreadCrumbProps> = ({
         <div className="flex items-center pt-6 pb-4 overflow-x-auto whitespace-nowrap ">
             {list.map((el, index) => (
                 <div key={el.id}>
-                    <Link href={el.link} className="text-gray-500 dark:text-gray-200 font-medium">
+                    <Link href={el.link} className="text-gray-500 dark:text-gray-200 font-medium hover:underline">
                         {el.name}
                     </Link>
 

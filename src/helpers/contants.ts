@@ -199,3 +199,41 @@ export const cartSummary = {
     tax: "3"
 };
 
+// Checkout
+export const countries = [
+    {
+        id: 1,
+        name: 'United State',
+        value: 'US',
+        unavailable: false    
+    },
+    {
+        id: 2,
+        name: 'United Kingdom',
+        value: 'UK',
+        unavailable: false
+    },    
+    {
+        id: 3,
+        name: 'Germany',
+        value: 'GE',
+        unavailable: false
+    },
+    {
+        id: 4,
+        name: 'Ghana',
+        value: 'GH',
+        unavailable: false  
+    }
+];
+
+export const states = [
+    {
+        id: 1,
+        name: 'MA',
+        value: 'ma',
+        unavailable: false    
+    }
+];
+
+

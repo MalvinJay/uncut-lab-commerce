@@ -29,20 +29,20 @@ const CartItem: React.FC<CartItemProps> = ({ cart }) => {
                         src={image?.src}
                         width={132}
                         height={176}
-                        className="w-full h-full transition duration-700 object-cover bg-gray-100"
+                        className="w-full h-full object-cover bg-gray-100 transition duration-700"
                         alt={name} 
                     />
                 </div>
 
                 <div className="sm:ml-10 w-full h-full flex flex-col justify-between">
-                    <div className="mt-5 sm:mt-0 space-y-2">
+                    <div className="mt-5 sm:mt-0 space-y-2 text-base text-gray-500 font-semibold">
                         <h2 className="text-xl text-gray-900 font-bold">{name}</h2>
-                        <p className="text-base text-gray-700 font-semibold">Weight: {weight}</p>
-                        <p className="text-base text-gray-700 font-semibold">Category: {category}</p>
+                        <p>Weight: {weight}</p>
+                        <p>Category: {category}</p>
                     </div>
 
                     <div className='relative'>
-                        <SelectListbox list={quantityList} />
+                        <SelectListbox list={quantityList} styles="w-16 h-8" />
                     </div>
                 </div>
             </div>

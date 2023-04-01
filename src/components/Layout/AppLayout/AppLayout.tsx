@@ -4,10 +4,9 @@ import MainFooter from '../Footer/MainFooter'
 
 interface LayoutProps {
     children: React.ReactNode;
-    title: string
 }
 
-const AppLayout: React.FC<LayoutProps> = ({ children, title }) => {
+const AppLayout: React.FC<LayoutProps> = ({ children }) => {
     return (
         <>
             <MainHeader />

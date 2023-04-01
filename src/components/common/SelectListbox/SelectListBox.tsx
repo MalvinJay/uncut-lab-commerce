@@ -5,21 +5,23 @@ import { ListInterface } from '@/src/interfaces';
 
 interface SortListProps {
     list: Array<ListInterface>;
+    styles: string;
 }
 
 const SelectListbox: React.FC<SortListProps> = ({
-    list = []
+    list = [],
+    styles = "w-16 h-8 mt-4 sm:!text-sm"
 }) => {
     const [selected, setselected] = useState(list[0]);
 
     return (
         <Listbox value={selected} onChange={setselected}>
-            <div className="relative w-16 mt-4">
-                <Listbox.Button className="relative w-full cursor-default h-8 bg-white border border-gray-300 p-2 text-left focus:outline-none sm:text-sm">
+            <div className={`relative ${styles}`}>
+                <Listbox.Button className="w-full h-full flex items-center relative cursor-default bg-white border border-gray-300 px-2 text-left focus:outline-none">
                     <span className="block truncate">{selected.name}</span>
                     <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                         <ChevronDownIcon
-                            className="h-5 w-5 text-gray-400 font-bold"
+                            className="w-6 text-black font-bold"
                             aria-hidden="true"
                         />
                     </span>
@@ -37,7 +39,7 @@ const SelectListbox: React.FC<SortListProps> = ({
                                 key={el.id}
                                 value={selected}
                                 disabled={el.unavailable}
-                                className="pl-2 hover:bg-gray-100"
+                                className="pl-3 py-1 hover:bg-gray-100"
                             >
                                 {el.name}
                             </Listbox.Option>

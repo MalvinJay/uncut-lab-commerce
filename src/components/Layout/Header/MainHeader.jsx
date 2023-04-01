@@ -73,7 +73,7 @@ const MainHeader = () => {
 
       <header className="relative bg-white">
         <section className="bg-black hidden md:block">
-          <div className="mx-auto max-w-6xl h-10 px-4 sm:px-6 lg:px-8 flex justify-between items-center text-sm font-medium text-white">
+          <div className="mx-auto max-w-6xl px-4 flex justify-between items-center text-sm font-medium text-white h-10">
             <Link href='/' className='flex items-center gap-x-3'>
               <Image priority src="/assets/images/truck.png" width={20} height={10} alt="store_pickup" />
               <span className='uppercase text-sm font-semibold leading-none'>Free in-store pickup</span>
@@ -103,7 +103,7 @@ const MainHeader = () => {
         </section>
 
         <nav aria-label="Top" className="shadow-md">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex h-16 items-center">
+          <div className="mx-auto max-w-6xl px-4 flex items-center h-16">
             <button
               type="button"
               className="rounded-md bg-white p-2 text-gray-400 lg:hidden"
