@@ -147,5 +147,55 @@ export const homeBreadcrumb = [
       name: "Products",
       link: "/products"
     },
-  ];
+];
+
+// Cart
+export const quantityList = [
+    {
+        id: 1,
+        name: "1",
+        value: "1",
+        unavailable: false
+    },
+    {
+        id: 2,
+        name: "2",
+        value: "2",
+        unavailable: false
+    },
+    {
+        id: 3,
+        name: "3",
+        value: "3",
+        unavailable: false
+    },
+    {
+        id: 4,
+        name: "4",
+        value: "4",
+        unavailable: false
+    },
+    {
+        id: 5,
+        name: "5",
+        value: "5",
+        unavailable: false
+    },
+    {
+        id: 6,
+        name: "6",
+        value: "6",
+        unavailable: false
+    }
+]
+
+// Cart Summary
+export const cartSummary = {
+    total: "115",
+    sub_total: "112",
+    quantity: 13,
+    currency: "$",
+    delivery: "In-Store Pickup",
+    tax: "3"
+};
 

@@ -1,15 +1,8 @@
 import React, { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
+import { DropdownInterface } from '@/src/interfaces';
 
-interface DropdownProps {
-    children: React.ReactNode;
-    dropdownButton: React.ReactNode,
-    position?: '-translate-x-1/4' | '-translate-x-2/4' | '-translate-x-3/4',
-    dropdownWidth: string,
-    triggerState: string
-}
-
-const Dropdown: React.FC<DropdownProps> = ({ 
+const Dropdown: React.FC<DropdownInterface> = ({ 
     children, 
     dropdownButton, 
     position='-translate-x-3/4',

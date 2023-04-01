@@ -143,7 +143,7 @@ const MainHeader = () => {
             <div className="ml-auto flex items-center">
               {/* Cart */}
               <div className="mr-4 flow-root lg:mr-12">
-                <Link href="/" className="relative group -m-2 flex items-center p-3">
+                <Link href="/cart" className="relative group -m-2 flex items-center p-3">
                   <Image 
                     src="/assets/images/shopping-bag.png"
                     className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"

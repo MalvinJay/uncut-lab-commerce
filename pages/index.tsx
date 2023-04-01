@@ -2,20 +2,22 @@ import React, { useState } from 'react'
 import Head from 'next/head'
 import { homeBreadcrumb, sortList } from '@/src/helpers'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
-import { SortInterface } from '@/src/interfaces'
+
+import { ListInterface } from '@/src/interfaces'
 
 import AppLayout from '@/src/components/Layout/AppLayout/AppLayout'
 import Dropdown from '@/src/components/common/Dropdown/Dropdown'
 import BreadCrumb from '@/src/components/common/Breadcrumb/Breadcrumb'
+
 import ProductList from '@/src/components/ProductList/ProductList'
 import { productsList } from '@/src/reducers/products'
 
 const Home = () => {
   const [selected, setselected] = useState(sortList[0]);
 
-  const handleSelection = (item: SortInterface) => {
+  const handleSelection = (item: ListInterface) => {
     setselected(item)
-    return undefined;
+    return;
   }
 
   return (
