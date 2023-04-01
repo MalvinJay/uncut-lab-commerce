@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 import { ChevronLeftIcon } from '@heroicons/react/24/outline';
-import { cartList } from '@/src/reducers/cart'
+import { cartList } from '@/src/reducers/cart';
 import { cartSummary } from '@/src/helpers';
 
 import AppLayout from '@/src/components/Layout/AppLayout/AppLayout'
@@ -35,11 +35,11 @@ const Cart = () => {
       </Head>
 
       <AppLayout title="home">
-        <section className='bg-white min-h-screen max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+        <section className='bg-white min-h-screen max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
           <BreadCrumb list={breadcrumbList} />
 
 
-          <div className='flex items-start gap-10 md:gap-x-20'>
+          <div className='md:flex items-start gap-x-4 sm:gap-x-8 lg:gap-x-20'>
             <div className="w-full md:w-2/3">
               <div className='flex justify-between items-center pt-8 pb-5 border-b border-gray-200'>
                 <h2 className="text-3xl font-bold">Shopping Cart</h2>
@@ -65,7 +65,7 @@ const Cart = () => {
             <div className="w-full md:w-1/3 mt-6 h-full md:mt-8">
               <CartSummary info={cartSummary} />
 
-              <div className='pt-5'>
+              <div className='py-5'>
                 <p className='text-center font-semibold flex items-center justify-center space-x-2'>
                   <Image src="/assets/images/connect.png" width={17} height={17} alt="connect" />
                   <span className='text-gray-500'>Need Help?</span>

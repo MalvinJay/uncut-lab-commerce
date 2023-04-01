@@ -23,12 +23,13 @@ const CartItem: React.FC<CartItemProps> = ({ cart }) => {
 
     return (
         <div className="sm:flex justify-between bg-white py-8 border-b border-gray-200">
-            <div className='flex items-start '>
+            <div className='sm:flex items-start '>
                 <div className='relative w-full sm:w-56 h-44'>
                     <Image
                         src={image?.src}
-                        fill
-                        className="w-full h-full object-cover" 
+                        width={132}
+                        height={176}
+                        className="w-full h-full transition duration-700 object-cover bg-gray-100"
                         alt={name} 
                     />
                 </div>
@@ -46,7 +47,7 @@ const CartItem: React.FC<CartItemProps> = ({ cart }) => {
                 </div>
             </div>
 
-            <div className="flex flex-col justify-between">
+            <div className="flex pt-4 sm:pt-0 sm:flex-col justify-between">
                 <p className="text-xl font-bold text-black text-end">{currency}{price}</p>
                 
                 <div className="inline-flex items-center space-x-1 cursor-pointer p-1 hover:bg-gray-100">

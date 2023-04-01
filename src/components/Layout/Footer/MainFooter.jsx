@@ -5,7 +5,7 @@ import React from 'react'
 
 const MainFooter = () => {
   return (
-    <footer className="mx-auto max-w-7xl py-10 px-4 sm:px-6 lg:px-8">
+    <footer className="mx-auto max-w-6xl py-10 px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-10">
         <div className="col-span-full hidden lg:col-span-1 lg:block">
           <Link href="/">

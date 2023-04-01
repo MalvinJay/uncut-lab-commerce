@@ -42,7 +42,7 @@ const Products = () => {
       </Head>
 
       <AppLayout title="home">
-        <section className='bg-white min-h-screen max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+        <section className='bg-white min-h-screen max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
           {/* Page breadcrumb goes here.. */}
           <BreadCrumb list={breadcrumbList} />
 

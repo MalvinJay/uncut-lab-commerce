@@ -1,9 +1,10 @@
 import { Fragment, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Dialog, Tab, Transition } from '@headlessui/react'
+import { Dialog, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 import { socials, topMenus, profileList } from '@/src/helpers'
+import { cartList } from '@/src/reducers/cart';
 
 // Components
 import Dropdown from '@/src/components/common/Dropdown/Dropdown'
@@ -72,7 +73,7 @@ const MainHeader = () => {
 
       <header className="relative bg-white">
         <section className="bg-black hidden md:block">
-          <div className="mx-auto max-w-7xl h-10 px-4 sm:px-6 lg:px-8 flex justify-between items-center text-sm font-medium text-white">
+          <div className="mx-auto max-w-6xl h-10 px-4 sm:px-6 lg:px-8 flex justify-between items-center text-sm font-medium text-white">
             <Link href='/' className='flex items-center gap-x-3'>
               <Image priority src="/assets/images/truck.png" width={20} height={10} alt="store_pickup" />
               <span className='uppercase text-sm font-semibold leading-none'>Free in-store pickup</span>
@@ -102,7 +103,7 @@ const MainHeader = () => {
         </section>
 
         <nav aria-label="Top" className="shadow-md">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex h-16 items-center">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex h-16 items-center">
             <button
               type="button"
               className="rounded-md bg-white p-2 text-gray-400 lg:hidden"
@@ -152,8 +153,8 @@ const MainHeader = () => {
                     alt="shopping_bag" 
                   />
 
-                  <div className="absolute right-0 top-0 flex justify-center items-center h-5 w-5 rounded-full bg-[#ff7060] text-xs font-medium text-white border-2 border-white"> {/* group-hover:text-opacity-50 */}
-                    0
+                  <div className="absolute right-0 top-0 flex justify-center items-center h-5 w-5 rounded-full bg-[#ff7060] text-xs font-medium text-white border-2 border-white transform transition duration-200 group-hover:scale-110"> 
+                    {cartList.length || 0}
                   </div>
                   <span className="sr-only">items in cart, view bag</span>
                 </Link>
