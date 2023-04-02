@@ -30,15 +30,18 @@ export const socials = [
 ];
 export const profileList = [
     {
-        name: "Edit Profile",
-        link: "/profile"
+        name: "Account",
+        icon: "/assets/images/user.png",
+        link: "/account"
     },
     {
-        name: "Settings",
-        link: "/profile"
+        name: "Orders",
+        icon: "/assets/images/layout-list.png",
+        link: "/orders"
     },
     {
         name: "Logout",
+        icon: "/assets/images/log-out.png",
         action: "logout"
     }
 ];

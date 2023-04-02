@@ -19,34 +19,34 @@ const CartItem: React.FC<CartItemProps> = ({ order }) => {
     } = order;
 
     return (
-        <div className='sm:flex items-center justify-between p-5 border border-gray-200 overflow-y-hidden hover:bg-slate-50 cursor-pointer'>
-            <div className='relative h-28'>
+        <div className='sm:flex items-center justify-between sm:gap-x-4 lg:gap-x-0 p-5 border border-gray-200 overflow-y-hidden hover:bg-slate-50 cursor-pointer'>
+            <div className='relative w-full sm:w-auto h-[50vh] sm:h-28'>
                 <Image
                     src={image?.src}
                     width={100}
                     height={150}
-                    className="h-full object-cover bg-gray-100 transition duration-700"
+                    className="w-full h-full object-cover bg-gray-100 transition duration-700"
                     alt={name} 
                 />
             </div>
 
-            <div className="flex flex-col space-y-2">
-                <h2 className='text-base text-gray-500 font-medium'>Order Number</h2>
-                <p className='text-base text-black font-bold'>{order_id}</p>
+            <div className="flex flex-col space-y-2 mt-4 sm:mt-0 !text-lg md:text-base">
+                <h2 className='text-gray-500 font-medium'>Order Number</h2>
+                <p className='text-black font-bold'>{order_id}</p>
             </div>
             <div className="flex flex-col space-y-2">
-                <h2 className='text-base text-gray-500 font-medium'>Pick-up Date</h2>
-                <p className='text-base text-black font-bold'>{pickup_date} | {pickup_time}</p>
+                <h2 className='text-gray-500 font-medium'>Pick-up Date</h2>
+                <p className='text-black font-bold'>{pickup_date} | {pickup_time}</p>
             </div>
             <div className="flex flex-col space-y-2">
-                <h2 className='text-base text-gray-500 font-medium'>Status</h2>
-                <p className='text-base text-black font-bold'>{status}</p>
+                <h2 className='text-gray-500 font-medium'>Status</h2>
+                <p className='text-black font-bold'>{status}</p>
             </div>
             <div className="flex flex-col space-y-2">
-                <h2 className='text-base text-gray-500 font-medium'>Order Amount</h2>
-                <p className='text-base text-black font-bold'>{currency}{price}</p>
+                <h2 className='text-gray-500 font-medium'>Order Amount</h2>
+                <p className='text-black font-bold'>{currency}{price}</p>
             </div>
-            <div className='flex gap-x-3'>
+            <div className='flex gap-x-3 mt-4 sm:mt-0'>
                 <button className="w-32 text-base py-2 font-semibold text-black border border-black hover:bg-opacity-90">
                     Repeat Order
                 </button>

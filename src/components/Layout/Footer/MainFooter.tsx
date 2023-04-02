@@ -36,7 +36,7 @@ const MainFooter = () => {
           <div className="mt-3 grid space-y-3 text-base font-medium">
             {support.map((el) => (
               <p key={el.name}>
-                <Link href={el.link} className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
+                <Link href={el.link} className="hover:underline inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
                   {el.name}
                 </Link>
               </p>
@@ -50,7 +50,7 @@ const MainFooter = () => {
           <div className="mt-3 grid space-y-3 text-base font-medium">
             {shop.map((el) => (
               <p key={el.name}>
-                <Link href={el.link} className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
+                <Link href={el.link} className="hover:underline inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
                   {el.name}
                 </Link>
               </p>
@@ -64,7 +64,7 @@ const MainFooter = () => {
           <div className="mt-3 grid space-y-3 text-base font-medium">
             {company.map((el) => (
               <p key={el.name}>
-                <Link href={el.link} className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
+                <Link href={el.link} className="hover:underline inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
                   {el.name}
                 </Link>
               </p>
@@ -79,9 +79,11 @@ const MainFooter = () => {
             {contact.map((el) => (
               <p key={el.name}>
                 {el.type ? 
-                  <span>{el.name}</span>
+                  <span className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
+                    {el.name}
+                  </span>
                 :
-                  <Link href={el.link} className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
+                  <Link href={el.link} className="hover:underline inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
                     {el.name}
                   </Link>
                 }

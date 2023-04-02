@@ -6,7 +6,7 @@ const Dropdown: React.FC<DropdownInterface> = ({
     children, 
     dropdownButton, 
     position='-translate-x-3/4',
-    dropdownWidth='max-w-[15rem]',
+    dropdownWidth='max-w-[15rem] w-32',
     triggerState=''
 }) => {
     return (
@@ -26,7 +26,7 @@ const Dropdown: React.FC<DropdownInterface> = ({
                         leaveFrom="opacity-100 translate-y-0"
                         leaveTo="opacity-0 translate-y-1"
                     >
-                        <Popover.Panel className={`${position} ${dropdownWidth} absolute z-[100] mt-3 mr-10 w-screen transform px-4 sm:px-0`}>
+                        <Popover.Panel className={`${position} ${dropdownWidth} absolute z-[100] mt-3 mr-10 transform px-4 sm:px-0`}>
                             <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                                 {children}
                             </div>

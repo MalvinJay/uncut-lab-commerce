@@ -12,6 +12,19 @@ import Dropdown from '@/src/components/common/Dropdown/Dropdown'
 const MainHeader = () => {
   const [open, setOpen] = useState(false);
 
+  const handleLogout = (type: string) => {
+    switch (type) {
+      case 'logount':
+        
+        break;
+    
+      default:
+        break;
+    }
+
+    return;
+  }
+
   return (
     <>
       {/* Mobile menu */}
@@ -166,16 +179,25 @@ const MainHeader = () => {
                   dropdownButton={
                     <Image src="/assets/images/profile.png" width={30} height={30} alt="profile" />
                   }
+                  dropdownWidth='w-40'
+                  triggerState=""
                 >
-                  <div className="relative bg-white p-5">
+                  <div className="relative bg-white p-3">
                     {profileList.map((el, index) => (
-                      <div className='hover:bg-slate-50' key={index}>
+                      <div className='flex items-center space-x-3 mb-2 p-1 hover:bg-slate-50' key={index}>
+                        <Image 
+                          src={el.icon} 
+                          width={20} 
+                          height={20} 
+                          alt={el.name} 
+                        />
+                        
                         {el.action === 'logout' ?
-                          <div className='p-2' onClick={() => handleLogout()}>
+                          <div className='w-full cursor-pointer' onClick={handleLogout('logout')}>
                             {el.name}
                           </div> 
                         :
-                          <Link href={el.link} className="block w-full p-2">{el.name}</Link>
+                          <Link href={el.link} className="block w-full">{el.name}</Link>
                         }
                       </div>
                     ))}
