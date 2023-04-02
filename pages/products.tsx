@@ -41,48 +41,43 @@ const Products = () => {
         <link rel="icon" href="/logo.png" />
       </Head>
 
-      <AppLayout>
-        <section className='bg-white min-h-screen max-w-6xl mx-auto px-4'>
-          {/* Page breadcrumb goes here.. */}
-          <BreadCrumb list={breadcrumbList} />
+      <section className='bg-white min-h-screen max-w-6xl mx-auto px-4'>
+        <BreadCrumb list={breadcrumbList} />
 
-          <div className='flex justify-between items-center py-8'>
-            <h2 className="text-2xl font-bold">All Products</h2>
+        <div className='flex justify-between items-center py-8'>
+          <h2 className="text-2xl font-bold">All Products</h2>
 
-            <div className='flex items-center gap-x-2'>
-              <span>Sort By: </span>
+          <div className='flex items-center gap-x-2'>
+            <span>Sort By: </span>
 
-              <Dropdown
-                position="-translate-x-1/4"
-                dropdownButton={
-                  <div className='flex items-center gap-x-2'>
-                    <span className='font-bold text-lg'>{selected.name}</span>
-                    <ChevronDownIcon className="w-6" aria-hidden="true" />
-                  </div>
-                }
-                dropdownWidth="max-w-[10rem]"
-                triggerState=""
-              >
-                <div className="relative bg-white p-3">
-                  {sortList.map((el, index) => (
-                    <div 
-                      key={index}
-                      className='text-lg font-medium hover:bg-slate-50 py-1 cursor-pointer' 
-                      onClick={() => handleSelection(el)}
-                    >
-                      {el.name}
-                    </div>
-                  ))}
+            <Dropdown
+              position="-translate-x-1/4"
+              dropdownButton={
+                <div className='flex items-center gap-x-2'>
+                  <span className='font-bold text-lg'>{selected.name}</span>
+                  <ChevronDownIcon className="w-6" aria-hidden="true" />
                 </div>
-              </Dropdown>
-            </div>
+              }
+              dropdownWidth="max-w-[10rem]"
+              triggerState=""
+            >
+              <div className="relative bg-white p-3">
+                {sortList.map((el, index) => (
+                  <div 
+                    key={index}
+                    className='text-lg font-medium hover:bg-slate-50 py-1 cursor-pointer' 
+                    onClick={() => handleSelection(el)}
+                  >
+                    {el.name}
+                  </div>
+                ))}
+              </div>
+            </Dropdown>
           </div>
+        </div>
 
-
-          {/* Products */}
-          <ProductList products={productsList} />
-        </section>
-      </AppLayout>
+        <ProductList products={productsList} />
+      </section>
     </>
   )
 }

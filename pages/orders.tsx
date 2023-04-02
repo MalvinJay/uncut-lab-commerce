@@ -29,19 +29,17 @@ const Cart = () => {
         <link rel="icon" href="/logo.png" />
       </Head>
 
-      <AppLayout>
-        <section className='bg-white min-h-screen max-w-6xl mx-auto px-4'>
-          <BreadCrumb list={breadcrumbList} />
+      <section className='bg-white min-h-screen max-w-6xl mx-auto px-4'>
+        <BreadCrumb list={breadcrumbList} />
 
-          <div className="w-full">
-            <div className='pt-8 pb-5'>
-              <h2 className="text-2xl font-bold">My Orders</h2>
-            </div>
-
-            <OrderList orders={orderList} />             
+        <div className="w-full">
+          <div className='pt-8 pb-5'>
+            <h2 className="text-2xl font-bold">My Orders</h2>
           </div>
-        </section>
-      </AppLayout>
+
+          <OrderList orders={orderList} />             
+        </div>
+      </section>
     </>
   )
 }
