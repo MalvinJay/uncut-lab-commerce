@@ -1,16 +1,16 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import { Inter } from 'next/font/google'
+import { Figtree } from 'next/font/google'
 
-const inter = Inter({
+const figtree = Figtree({
   subsets: ['latin'],
-  // weight: ['400', '500', '600', '700'],
-  // style: ['normal'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal'],
 });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={inter.className}>
+    <main className={figtree.className}>
       <Component {...pageProps} />
     </main>
   )

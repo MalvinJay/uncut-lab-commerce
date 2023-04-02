@@ -24,7 +24,7 @@ const CartItem: React.FC<CartItemProps> = ({ cart }) => {
     return (
         <div className="sm:flex justify-between bg-white py-8 border-b border-gray-200">
             <div className='sm:flex items-start '>
-                <div className='relative w-full sm:w-56 h-44'>
+                <div className='relative w-full sm:w-56 h-40'>
                     <Image
                         src={image?.src}
                         width={132}

@@ -47,7 +47,7 @@ const Products = () => {
           <BreadCrumb list={breadcrumbList} />
 
           <div className='flex justify-between items-center py-8'>
-            <h2 className="text-3xl font-bold">All Products</h2>
+            <h2 className="text-2xl font-bold">All Products</h2>
 
             <div className='flex items-center gap-x-2'>
               <span>Sort By: </span>

@@ -3,12 +3,14 @@ import { useRouter } from 'next/router';
 import SelectListbox from '../../common/SelectListbox/SelectListBox';
 import { countries, states } from '@/src/helpers';
 
-const CartSummary: React.FC = () => {
+const CheckoutInfo: React.FC = () => {
     const router = useRouter();
 
     const handlePlaceOrder = (e: React.MouseEvent<HTMLButtonElement>) => {
-        // handle checkout
         e.preventDefault();
+        setTimeout(() => {
+            router.push('/orders');
+        }, 2000);
     };
 
     return (
@@ -56,7 +58,7 @@ const CartSummary: React.FC = () => {
                 </div>
             </div>
             <div className='col-start-1 col-end-3 pt-2 pb-5 border-b border-gray-200'>
-                <h2 className="text-3xl font-bold">Schedule Order Pick-up</h2>
+                <h2 className="text-2xl font-bold">Schedule Order Pick-up</h2>
             </div>
             <div className='col-start-1 col-end-2'>
                 <label htmlFor="date" className='font-semibold'>Date</label>
@@ -81,4 +83,4 @@ const CartSummary: React.FC = () => {
     )
 }
 
-export default CartSummary;
+export default CheckoutInfo;

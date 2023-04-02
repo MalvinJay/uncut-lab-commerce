@@ -40,7 +40,7 @@ const Cart = () => {
           <div className='md:flex items-start gap-x-4 sm:gap-x-8 lg:gap-x-20'>
             <div className="w-full md:w-2/3">
               <div className='flex justify-between items-center pt-8 pb-5 border-b border-gray-200'>
-                <h2 className="text-3xl font-bold">Shopping Cart</h2>
+                <h2 className="text-2xl font-bold">Shopping Cart</h2>
 
                 <div className='text-2xl font-semibold'>
                   {cartList.length} Items

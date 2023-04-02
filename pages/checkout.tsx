@@ -44,7 +44,7 @@ const Checkout = () => {
           <div className='md:flex items-start gap-x-4 sm:gap-x-8'>
             <div className="w-full md:w-7/12">
               <div className='pt-8 pb-5 border-b border-gray-200'>
-                <h2 className="text-3xl font-bold">Your Information</h2>
+                <h2 className="text-2xl font-bold">Your Information</h2>
               </div>
 
               <CheckoutInfo />

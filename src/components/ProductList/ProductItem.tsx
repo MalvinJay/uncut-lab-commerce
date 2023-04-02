@@ -26,8 +26,7 @@ const ProductItem: React.FC<SaleProductItemProps> = ({ product }) => {
 
   const handleAddToCart = () => {
     // Add product to cart
-
-    // router.push(`/product/${id}/${slug}`);
+    router.push(`/cart`);
   }
 
   return (
