@@ -27,7 +27,7 @@ const CartSummary: React.FC<SummaryInterface> = ({ children, info }) => {
     return (
     <>
         <div className="w-full h-full bg-white shadow-form">
-            <div className='p-6 border-b border-gray-200'>
+            <div className='p-6 border-b border-gray-300'>
                 <h2 className='text-2xl font-bold'>Order Summary</h2>
             </div>
 
@@ -36,13 +36,13 @@ const CartSummary: React.FC<SummaryInterface> = ({ children, info }) => {
 
             <div className='p-6 font-bold text-lg'>
                 <div className='flex justify-between items-stretch gap-x-3'>
-                    <input placeholder="Enter Coupon Code" className='w-full text-base font-semibold px-3 border border-gray-200 outline-none' type="text" />
+                    <input placeholder="Enter Coupon Code" className='w-full text-base font-semibold px-3 border border-gray-300 outline-none' type="text" />
                     <button className="bg-[#579d81] p-2 font-medium text-white text-lg hover:bg-opacity-90">
                         Apply
                     </button>
                 </div>
 
-                <hr className="my-6" />
+                <hr className="my-6 border-gray-300" />
 
                 <div className="mb-2 flex justify-between space-y-2">
                     <p className="text-black font-bold">Item Subtotal ({quantity})</p>
@@ -53,13 +53,12 @@ const CartSummary: React.FC<SummaryInterface> = ({ children, info }) => {
                     <p className="text-gray-500">{delivery}</p>
                 </div>
 
-                <hr className="my-6" />
+                <hr className="my-6 border-gray-300" />
 
                 <div className="flex justify-between mb-3">
                     <p className="text-black">Estimated Tax</p>
                     <p className="text-gray-500">{currency}{tax}</p>
                 </div>
-
                 <div className="flex justify-between mb-3">
                     <p className="text-black">Total</p>
                     <p className="text-gray-500">{currency}{total}</p>

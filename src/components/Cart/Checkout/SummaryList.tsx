@@ -8,9 +8,9 @@ interface SummaryListProps {
   
 const SummaryList: React.FC<SummaryListProps> = ({ List }) => {
     return (
-        <section className='grid grid-cols gap-y-4 p-6 border-b border-gray-200'>
+        <section className='grid grid-cols gap-y-4 p-6 border-b border-gray-300'>
             {List.map((item) => (
-                <div key={item.id} className='sm:flex items-start p-6 border border-gray-200'>
+                <div key={item.id} className='sm:flex items-start p-4 border border-gray-300'>
                     <Image
                         src={item.image.src}
                         width={80}
