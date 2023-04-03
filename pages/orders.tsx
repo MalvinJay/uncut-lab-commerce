@@ -1,4 +1,6 @@
 import React from 'react'
+"use client";
+
 import type { NextPage } from 'next';
 import Head from 'next/head'
 import { orderList } from '@/src/data/orders'

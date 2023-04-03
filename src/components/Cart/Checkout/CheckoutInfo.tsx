@@ -14,7 +14,7 @@ const CheckoutInfo: React.FC = () => {
     };
 
     return (
-        <form className="w-full grid grid-cols-2 gap-6 py-6">
+        <form className="w-full grid grid-cols-2 gap-6 py-6 appear">
             <div className='col-start-1 col-end-2'>
                 <label htmlFor="firstname" className='font-semibold'>First Name</label>
                 <input name="firstname" placeholder="" className='w-full h-10 mt-2 text-base px-3 border border-gray-300 outline-none' type="text" />

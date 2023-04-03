@@ -1,12 +1,21 @@
-import { Cart } from "@/src/interfaces";
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Cart, SummaryInfo } from "@/src/interfaces";
+import { createSlice, PayloadAction, current } from "@reduxjs/toolkit";
 
 export interface CartState {
-  items: Cart[]
+  items: Cart[],
+  summary: SummaryInfo
 }
 
 const initialState: CartState = {
-  items: []
+  items: [],
+  summary: {
+    total: 0,
+    sub_total: 0,
+    quantity: 0,
+    currency: "$",
+    delivery: "In-Store Pickup",
+    tax: 0
+  }
 }
 
 export const cartSlice = createSlice({
@@ -16,24 +25,43 @@ export const cartSlice = createSlice({
     reset: () => initialState,
     addToCart: (state, action: PayloadAction<Cart>) => {
       // Check if item already exists in state, update the quantity value
-      const findItem = state.items.find(el => el.id === action.payload.id)
       let newList = [];
+      const findItem = current(state).items.find(el => el.id === action.payload.id);
 
       if (findItem) {
-        newList = state.items.map(el => {
-          if (el.id === findItem.id) return { ...el, quantity: el.quantity + findItem.quantity}
+        newList = current(state).items.slice(0).map(el => {
+          if (el.id === findItem.id) return { ...el, quantity: el.quantity + action.payload.quantity}
           else return el
         })
       }
-      else newList = [...state.items, action.payload]
+      else newList = [...current(state).items, action.payload]
 
       state.items = newList
+    },
+    updateCart: (state, action: PayloadAction<Cart>) => {
+      let newList = current(state).items;
+      const findItem = newList.find(el => el.id === action.payload.id);
+      const updatedList = newList.map((el) => {
+        if (el.id === findItem?.id) return { ...el, quantity: action.payload?.quantity }
+        else return el
+      })
+      state.items = updatedList
+    },
+    removeFromCart: (state, action: PayloadAction<Cart>) => {
+      const newList = state.items.slice(0).filter(el => el.id !== action.payload.id)
+      state.items = newList
+    },
+    updateOrderSummary: (state, action: PayloadAction<Cart>) => {
+      state.summary = { ...state.summary, ...action.payload}
     }
   },
 });
 
 export const {
   addToCart,
+  updateCart,
+  removeFromCart,
+  updateOrderSummary,
   reset,
 } = cartSlice.actions;
 

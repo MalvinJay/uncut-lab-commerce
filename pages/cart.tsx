@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+"use client";
+
+import React, { useEffect } from 'react'
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
 import { ChevronLeftIcon } from '@heroicons/react/24/outline';
-import { cartSummary } from '@/src/helpers';
-import { useAppSelector } from '@/src/redux/hooks';
+import { useAppSelector, useAppDispatch } from '@/src/redux/hooks';
+import { updateOrderSummary } from '@/src/redux/features/cartSlice';
 
 import BreadCrumb from '@/src/components/common/Breadcrumb/Breadcrumb'
 import CartList from '@/src/components/Cart/CartList'
@@ -24,13 +26,37 @@ const breadcrumbList = [
 ];
 
 const Cart: NextPage = () => {
-  const { items: cartList } = useAppSelector((state) => state.cart);
+  const dispatch = useAppDispatch();
+  const { items: cartList, summary } = useAppSelector((state) => state.cart);
 
   const handleCartUpdate = () => {
+
 
     return undefined;
   }
 
+  useEffect(() => {
+    // set order summary
+    const total_quantity = cartList.reduce((accum, curr) => accum + curr.quantity, 0)
+    const sub_total = cartList.reduce((accum, curr) => accum + (curr.quantity * Number(curr.price)), 0)
+    let tax = 3;
+
+    if (cartList.length <= 0) {
+      tax = 0
+    }
+
+    const orderInfo = {
+      total: Number(sub_total + tax),
+      sub_total: sub_total,
+      quantity: total_quantity,
+      currency: '$',
+      delivery: 'In-Store Pickup',
+      tax: tax,
+    }
+
+    dispatch(updateOrderSummary(orderInfo))
+  }, [cartList]);
+  
   return (
     <>
       <Head>
@@ -72,8 +98,8 @@ const Cart: NextPage = () => {
           </div>
 
           <div className="w-full md:w-1/3 mt-6 h-full md:mt-8">
-            <CartSummary info={cartSummary}>
-              <></>
+            <CartSummary info={summary}>
+              <div />
             </CartSummary>
           </div>
         </div>

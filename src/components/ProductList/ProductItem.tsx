@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import toast from 'react-hot-toast';
 
 import { Product } from '@/src/interfaces';
 import { StarIcon } from '@heroicons/react/24/outline';
@@ -26,7 +27,7 @@ const ProductItem: React.FC<SaleProductItemProps> = ({ product }) => {
   } = product;
 
   const dispatch = useAppDispatch();
-  const router = useRouter();
+  // const router = useRouter();
   const featured_image = images.length > 0 ? images[0].src : '';
 
   const handleAddToCart = () => {
@@ -38,11 +39,11 @@ const ProductItem: React.FC<SaleProductItemProps> = ({ product }) => {
     };
 
     dispatch(addToCart(cartItem))
-    router.push(`/cart`);
+    toast.success('Product Added to Cart', { duration: 3000})
   }
 
   return (
-    <figure className='w-full block relative group'>
+    <figure className='w-full block relative group appear'>
       <div className={`absolute left-0 z-10 ml-4 mt-4 py-2 px-6 text-base text-white ${stock > 0 ? 'bg-[#1bc18f]':'bg-[#ff7060]'}`}>{tag}</div>
 
       <div className='relative w-full h-[14rem] overflow-hidden bg-gray-300'>
@@ -69,6 +70,7 @@ const ProductItem: React.FC<SaleProductItemProps> = ({ product }) => {
 
         <button 
           className={`w-full bg-black text-white text-lg font-semibold py-3 ${stock <= 0 ? 'cursor-not-allowed bg-opacity-75' : ''}`}
+          disabled={stock <= 0}
           onClick={handleAddToCart}
         >
           Add to Cart

@@ -21,12 +21,12 @@ const CartSummary: React.FC<SummaryInterface> = ({ children, info }) => {
     } = info;
 
     const handleCheckout = () => {
-        if (router.route !== '/checkout') router.push('/checkout');
+        if (router.route !== '/checkout' && quantity > 0) router.push('/checkout');
     }
 
     return (
     <>
-        <div className="w-full h-full bg-white shadow-form">
+        <div className="w-full h-full bg-white shadow-form appear">
             <div className='p-6 border-b border-gray-300'>
                 <h2 className='text-2xl font-bold'>Order Summary</h2>
             </div>

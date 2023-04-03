@@ -1,6 +1,7 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { Figtree } from 'next/font/google'
+import { Toaster } from 'react-hot-toast';
 
 import Layout from '@/src/components/Layout/AppLayout/AppLayout'
 
@@ -16,6 +17,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       <main className={figtree.className}>
         <Component {...pageProps} />
       </main>
+      <Toaster />
     </Layout>
   )
 }

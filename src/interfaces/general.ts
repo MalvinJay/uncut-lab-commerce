@@ -20,12 +20,12 @@ export interface DropdownInterface {
 }
 
 export interface SummaryInfo {
-    total: string;
-    sub_total: string;
+    total: number;
+    sub_total: number;
     quantity: number;
     currency: string;
     delivery: string;
-    tax: string;
+    tax: number;
 }
 
 export interface CheckoutInfo {

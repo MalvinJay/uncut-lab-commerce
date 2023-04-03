@@ -167,7 +167,7 @@ const MainHeader = () => {
                     alt="shopping_bag" 
                   />
 
-                  <div className="absolute right-0 top-0 flex justify-center items-center h-5 w-5 rounded-full bg-[#ff7060] text-xs font-medium text-white border-2 border-white transform transition duration-200 group-hover:scale-110"> 
+                  <div className="absolute right-0 top-0 flex justify-center items-center h-5 w-5 rounded-full bg-[#ff7060] text-xs font-medium text-white border-2 border-white transform transition duration-200 group-hover:text-sm"> 
                     {cartList?.length || 0}
                   </div>
                   <span className="sr-only">items in cart, view bag</span>

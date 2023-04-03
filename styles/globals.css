@@ -110,3 +110,24 @@ a {
     color-scheme: dark;
   }
 }
+
+.appear {
+  animation: appear 1s;
+  transition: opacity 1s, visibility 1s;
+}
+
+@keyframes appear {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+

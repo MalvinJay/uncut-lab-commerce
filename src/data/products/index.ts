@@ -9,7 +9,7 @@ export const productsList = [
         date_created: "",
         description: "",
         weight: "25mg",
-        price: "35",
+        price: "15",
         rating: 4,
         stock: 10,
         images: [
@@ -47,7 +47,7 @@ export const productsList = [
         date_created: "",
         description: "",
         weight: "15mg",
-        price: "35",
+        price: "50",
         rating: 5,
         stock: 10,
         images: [
@@ -66,7 +66,7 @@ export const productsList = [
         date_created: "",
         description: "",
         weight: "30mg",
-        price: "35",
+        price: "47",
         rating: 4,
         stock: 0,
         images: [
@@ -85,7 +85,7 @@ export const productsList = [
         date_created: "",
         description: "",
         weight: "75mg",
-        price: "35",
+        price: "12",
         rating: 3,
         stock: 100,
         images: [
@@ -104,7 +104,7 @@ export const productsList = [
         date_created: "",
         description: "",
         weight: "10mg",
-        price: "35",
+        price: "60",
         rating: 4,
         stock: 0,
         images: [
@@ -123,7 +123,7 @@ export const productsList = [
         date_created: "",
         description: "",
         weight: "15mg",
-        price: "35",
+        price: "78",
         rating: 4,
         stock: 25,
         images: [
@@ -142,7 +142,7 @@ export const productsList = [
         date_created: "",
         description: "",
         weight: "16mg",
-        price: "35",
+        price: "32",
         rating: 5,
         stock: 0,
         images: [

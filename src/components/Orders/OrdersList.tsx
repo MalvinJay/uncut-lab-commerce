@@ -8,7 +8,7 @@ interface CartListProps {
   
 const OrderList: React.FC<CartListProps> = ({ orders }) => {
     return (
-        <section className='grid grid-cols gap-y-5 pb-6 md:pb-12'>
+        <section className='grid grid-cols gap-y-5 pb-6 md:pb-12 appear'>
             {orders.map((item) => (
                 <OrderItem key={item?.order_id} order={item} />
             ))}

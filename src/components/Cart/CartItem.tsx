@@ -2,14 +2,21 @@ import React from 'react'
 import { Cart } from '@/src/interfaces';
 import Image from 'next/image';
 import { XMarkIcon } from '@heroicons/react/24/outline';
-import SelectListbox from '../common/SelectListbox/SelectListBox';
+import toast from 'react-hot-toast';
+
+// import SelectListbox from '../common/SelectListbox/SelectListBox';
 import { quantityList } from '@/src/helpers';
+import { updateCart } from '@/src/redux/features/cartSlice';
+import { useAppDispatch } from '@/src/redux/hooks';
 
 interface CartItemProps {
     cart: Cart;
+    confirmRemove: (cart: Cart) => void;
 }
 
-const CartItem: React.FC<CartItemProps> = ({ cart }) => {
+const CartItem: React.FC<CartItemProps> = ({ cart, confirmRemove }) => {
+    const dispatch = useAppDispatch();
+
     const {
         id,
         name,
@@ -20,6 +27,15 @@ const CartItem: React.FC<CartItemProps> = ({ cart }) => {
         quantity,
         image
     } = cart;
+
+    const handleOnChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        const value = event.target.value;
+        const currentCart = { ...cart, quantity: Number(value) };
+        console.log('updated Cart:', currentCart);
+
+        dispatch(updateCart(currentCart))
+        toast.success('Item Updated!', { duration: 3000})
+    }
 
     return (
         <div className="sm:flex justify-between bg-white py-8 border-b border-gray-200">
@@ -42,7 +58,15 @@ const CartItem: React.FC<CartItemProps> = ({ cart }) => {
                     </div>
 
                     <div className='relative'>
-                        <SelectListbox list={quantityList} styles="w-16 h-8" />
+                        {/* <SelectListbox list={quantityList} styles="w-16 h-8" /> */}
+                        <select 
+                            onChange={handleOnChange}
+                            defaultValue={quantity} className='font-semibold w-16 h-8 border border-gray-300 pl-1 text-left focus:outline-none'
+                        >
+                            {quantityList.map(el => (
+                                <option value={el.value} key={el.id}>{el.name}</option>
+                            ))}
+                        </select>
                     </div>
                 </div>
             </div>
@@ -50,7 +74,9 @@ const CartItem: React.FC<CartItemProps> = ({ cart }) => {
             <div className="flex pt-4 sm:pt-0 sm:flex-col justify-between">
                 <p className="text-xl font-bold text-black text-end">{currency}{price}</p>
                 
-                <div className="inline-flex items-center space-x-1 cursor-pointer p-1 hover:bg-gray-100">
+                <div className="inline-flex items-center space-x-1 cursor-pointer p-1 hover:bg-gray-100"
+                    onClick={() => confirmRemove(cart)}
+                >
                     <XMarkIcon className='w-5 font-bold text-gray-500 fill-current' />
                     <span className='text-base text-gray-500 font-bold'>Remove</span>
                 </div>
