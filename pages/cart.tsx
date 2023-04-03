@@ -1,12 +1,14 @@
 "use client";
 
-import React, { useEffect } from 'react'
+import React, { ButtonHTMLAttributes, useEffect } from 'react'
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
 import { ChevronLeftIcon } from '@heroicons/react/24/outline';
 import { useAppSelector, useAppDispatch } from '@/src/redux/hooks';
 import { updateOrderSummary } from '@/src/redux/features/cartSlice';
+
+import toast from 'react-hot-toast';
 
 import BreadCrumb from '@/src/components/common/Breadcrumb/Breadcrumb'
 import CartList from '@/src/components/Cart/CartList'
@@ -29,10 +31,12 @@ const Cart: NextPage = () => {
   const dispatch = useAppDispatch();
   const { items: cartList, summary } = useAppSelector((state) => state.cart);
 
-  const handleCartUpdate = () => {
-
-
-    return undefined;
+  const handleCartUpdate = (event: React.MouseEvent<HTMLButtonElement>) => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+    toast.success('Cart Updated!', { duration: 3000})
   }
 
   useEffect(() => {
