@@ -16,5 +16,6 @@ export interface Product {
   price: string;
   rating: number;
   stock: number;
+  weight: string;
   images: ProductImage[];
 }

@@ -1,8 +1,11 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { Product } from '@/src/interfaces';
 import Image from 'next/image';
+
+import { Product } from '@/src/interfaces';
 import { StarIcon } from '@heroicons/react/24/outline';
+import { addToCart } from '@/src/redux/features/cartSlice';
+import { useAppDispatch } from '@/src/redux/hooks';
 
 interface SaleProductItemProps {
   product: Product;
@@ -21,11 +24,20 @@ const ProductItem: React.FC<SaleProductItemProps> = ({ product }) => {
     stock,
     images
   } = product;
+
+  const dispatch = useAppDispatch();
   const router = useRouter();
   const featured_image = images.length > 0 ? images[0].src : '';
 
   const handleAddToCart = () => {
     // Add product to cart
+    const cartItem = { 
+      ...product,
+      quantity: 1,
+      image: images[0]
+    };
+
+    dispatch(addToCart(cartItem))
     router.push(`/cart`);
   }
 
@@ -55,7 +67,8 @@ const ProductItem: React.FC<SaleProductItemProps> = ({ product }) => {
           <span className='pl-2 text-base text-[#1bc18f]' style={{ paddingTop: '2px' }}>13</span>
         </div>
 
-        <button className='w-full bg-black text-white text-lg font-semibold py-3'
+        <button 
+          className={`w-full bg-black text-white text-lg font-semibold py-3 ${stock <= 0 ? 'cursor-not-allowed bg-opacity-75' : ''}`}
           onClick={handleAddToCart}
         >
           Add to Cart

@@ -3,8 +3,8 @@ import type { NextPage } from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
 import { ChevronLeftIcon } from '@heroicons/react/24/outline';
-import { cartList } from '@/src/data/cart';
 import { cartSummary } from '@/src/helpers';
+import { useAppSelector } from '@/src/redux/hooks';
 
 import BreadCrumb from '@/src/components/common/Breadcrumb/Breadcrumb'
 import CartList from '@/src/components/Cart/CartList'
@@ -24,6 +24,13 @@ const breadcrumbList = [
 ];
 
 const Cart: NextPage = () => {
+  const { items: cartList } = useAppSelector((state) => state.cart);
+
+  const handleCartUpdate = () => {
+
+    return undefined;
+  }
+
   return (
     <>
       <Head>
@@ -42,11 +49,15 @@ const Cart: NextPage = () => {
               <h2 className="text-2xl font-bold">Shopping Cart</h2>
 
               <div className='text-2xl font-semibold'>
-                {cartList.length} Items
+                {cartList.length ? `${cartList.length} Item${cartList.length > 1 ? 's':''}` : ''}
               </div>
             </div>
 
-            <CartList cart={cartList} />
+            {cartList?.length > 0 ? 
+              <CartList cart={cartList} />
+            :
+              <div className='py-20 text-center text-2xl font-bold'>No item in cart</div>
+            }
 
             <div className='flex justify-between items-center text-base font-medium text-[#6fab94] pb-12 md:pb-16'>
               <span className='inline-flex items-center space-x-1 group'>
@@ -54,7 +65,9 @@ const Cart: NextPage = () => {
                 <Link href="/">Continue Shopping</Link>
               </span>
 
-              <button>Update Cart</button>
+              {cartList?.length > 0 && (
+                <button onClick={handleCartUpdate}>Update Cart</button>
+              )}
             </div>              
           </div>
 
