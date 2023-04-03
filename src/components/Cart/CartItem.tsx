@@ -31,7 +31,6 @@ const CartItem: React.FC<CartItemProps> = ({ cart, confirmRemove }) => {
     const handleOnChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const value = event.target.value;
         const currentCart = { ...cart, quantity: Number(value) };
-        console.log('updated Cart:', currentCart);
 
         dispatch(updateCart(currentCart))
         toast.success('Item Updated!', { duration: 3000})

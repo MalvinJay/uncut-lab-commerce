@@ -3,13 +3,12 @@
 import React from 'react';
 import type { NextPage } from 'next'
 import Head from 'next/head';
-import { cartSummary } from '@/src/helpers';
-import { cartList } from '@/src/data/cart';
 
 import BreadCrumb from '@/src/components/common/Breadcrumb/Breadcrumb'
 import CheckoutInfo from '@/src/components/Cart/Checkout/CheckoutInfo'
 import CartSummary from '@/src/components/Cart/CartSummary'
 import SummaryList from '@/src/components/Cart/Checkout/SummaryList';
+import { useAppSelector } from '@/src/redux/hooks';
 
 const breadcrumbList = [
   {
@@ -30,6 +29,8 @@ const breadcrumbList = [
 ];
 
 const Checkout: NextPage = () => {
+  const { items: cartList, summary } = useAppSelector((state) => state.cart);
+
   return (
     <>
       <Head>
@@ -48,11 +49,11 @@ const Checkout: NextPage = () => {
               <h2 className="text-2xl font-bold">Your Information</h2>
             </div>
 
-            <CheckoutInfo />
+            <CheckoutInfo List={cartList} />
           </div>
 
           <div className="w-full md:w-5/12 mt-6 h-full md:mt-8 md:pl-10">
-            <CartSummary info={cartSummary}>
+            <CartSummary info={summary}>
               <SummaryList List={cartList} />
             </CartSummary>
           </div>

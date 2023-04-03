@@ -21,6 +21,7 @@ const CartSummary: React.FC<SummaryInterface> = ({ children, info }) => {
     } = info;
 
     const handleCheckout = () => {
+        
         if (router.route !== '/checkout' && quantity > 0) router.push('/checkout');
     }
 

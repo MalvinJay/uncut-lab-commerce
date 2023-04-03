@@ -3,7 +3,7 @@ export interface OrderImage {
 }
 
 export interface Order {
-    order_id: number;
+    order_id: string;
     name: string;
     category: string;
     currency: string;

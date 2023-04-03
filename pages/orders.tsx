@@ -3,10 +3,10 @@ import React from 'react'
 
 import type { NextPage } from 'next';
 import Head from 'next/head'
-import { orderList } from '@/src/data/orders'
 
 import BreadCrumb from '@/src/components/common/Breadcrumb/Breadcrumb'
 import OrderList from '@/src/components/Orders/OrdersList'
+import { useAppSelector } from '@/src/redux/hooks';
 
 const breadcrumbList = [
   {
@@ -21,7 +21,9 @@ const breadcrumbList = [
   }
 ];
 
-const Cart: NextPage = () => {
+const Order: NextPage = () => {
+  const { orders: orderList } = useAppSelector((state) => state.order);
+
   return (
     <>
       <Head>
@@ -39,11 +41,16 @@ const Cart: NextPage = () => {
             <h2 className="text-2xl font-bold">My Orders</h2>
           </div>
 
-          <OrderList orders={orderList} />             
+          {orderList?.length > 0 ? 
+            <OrderList orders={orderList} />    
+          :
+            <div className='py-20 text-center text-2xl font-bold'>No Orders!</div>
+          }
+                   
         </div>
       </section>
     </>
   )
 }
 
-export default Cart;
+export default Order;
