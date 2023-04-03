@@ -27,3 +27,19 @@ export interface SummaryInfo {
     delivery: string;
     tax: string;
 }
+
+export interface CheckoutInfo {
+    firstname: string;
+    lastname: string;
+    email: string;
+    phone_number: string;
+    address: string;
+    address2: string;
+    town_city: string;
+    country: string;
+    state: string;
+    zip_postcode: string;
+    date: string;
+    time: string;
+    description: string;
+}

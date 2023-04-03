@@ -1,5 +1,5 @@
 import React from 'react'
-import { Order } from '../../actions'
+import { Order } from '@/src/interfaces'
 import OrderItem from './OrderItem'
 
 interface CartListProps {

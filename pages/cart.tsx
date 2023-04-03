@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import type { NextPage } from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
 import { ChevronLeftIcon } from '@heroicons/react/24/outline';
-import { cartList } from '@/src/reducers/cart';
+import { cartList } from '@/src/data/cart';
 import { cartSummary } from '@/src/helpers';
 
 import BreadCrumb from '@/src/components/common/Breadcrumb/Breadcrumb'
@@ -22,7 +23,7 @@ const breadcrumbList = [
   },
 ];
 
-const Cart = () => {
+const Cart: NextPage = () => {
   return (
     <>
       <Head>

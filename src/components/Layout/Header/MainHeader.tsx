@@ -4,13 +4,14 @@ import Image from 'next/image'
 import { Dialog, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 import { socials, topMenus, profileList } from '@/src/helpers'
-import { cartList } from '@/src/reducers/cart';
+import { useAppSelector } from '@/src/redux/hooks'
 
 // Components
 import Dropdown from '@/src/components/common/Dropdown/Dropdown'
 
 const MainHeader = () => {
   const [open, setOpen] = useState(false);
+  const { items: cartList } = useAppSelector((state) => state.cart);
 
   const handleLogout = (type: string) => {
     switch (type) {
@@ -22,7 +23,7 @@ const MainHeader = () => {
         break;
     }
 
-    return;
+    return undefined;
   }
 
   return (
@@ -167,7 +168,7 @@ const MainHeader = () => {
                   />
 
                   <div className="absolute right-0 top-0 flex justify-center items-center h-5 w-5 rounded-full bg-[#ff7060] text-xs font-medium text-white border-2 border-white transform transition duration-200 group-hover:scale-110"> 
-                    {cartList.length || 0}
+                    {cartList?.length || 0}
                   </div>
                   <span className="sr-only">items in cart, view bag</span>
                 </Link>

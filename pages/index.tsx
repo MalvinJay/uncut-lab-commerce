@@ -1,16 +1,18 @@
 import React, { useState } from 'react'
+import type { NextPage } from 'next'
 import Head from 'next/head'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
 import { homeBreadcrumb, sortList } from '@/src/helpers'
 import { ListInterface } from '@/src/interfaces'
-import { productsList } from '@/src/reducers/products'
+import { useAppSelector } from '@/src/redux/hooks'
 
 import Dropdown from '@/src/components/common/Dropdown/Dropdown'
 import BreadCrumb from '@/src/components/common/Breadcrumb/Breadcrumb'
 import ProductList from '@/src/components/ProductList/ProductList'
 
-const Home = () => {
+const Home: NextPage = () => {
   const [selected, setselected] = useState(sortList[0]);
+  const { products: productsList } = useAppSelector((state) => state.product);
 
   const handleSelection = (item: ListInterface) => {
     setselected(item)

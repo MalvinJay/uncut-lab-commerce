@@ -1,7 +1,8 @@
 import React from 'react';
+import type { NextPage } from 'next'
 import Head from 'next/head';
 import { cartSummary } from '@/src/helpers';
-import { cartList } from '@/src/reducers/cart';
+import { cartList } from '@/src/data/cart';
 
 import BreadCrumb from '@/src/components/common/Breadcrumb/Breadcrumb'
 import CheckoutInfo from '@/src/components/Cart/Checkout/CheckoutInfo'
@@ -26,7 +27,7 @@ const breadcrumbList = [
   },
 ];
 
-const Checkout = () => {
+const Checkout: NextPage = () => {
   return (
     <>
       <Head>

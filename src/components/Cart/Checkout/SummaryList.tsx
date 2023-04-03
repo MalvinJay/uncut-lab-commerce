@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { Cart } from '@/src/actions';
+import { Cart } from '@/src/interfaces';
 
 interface SummaryListProps {
     List: Cart[];
@@ -13,8 +13,9 @@ const SummaryList: React.FC<SummaryListProps> = ({ List }) => {
                 <div key={item.id} className='sm:flex items-start p-4 border border-gray-300'>
                     <Image
                         src={item.image.src}
-                        width={80}
-                        height={176}
+                        width={100}
+                        quality={100}
+                        height={112}
                         className="h-full object-cover bg-gray-100"
                         alt={item.name}
                     />

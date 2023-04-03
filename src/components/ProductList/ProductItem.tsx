@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { Product } from '../../actions';
+import { Product } from '@/src/interfaces';
 import Image from 'next/image';
 import { StarIcon } from '@heroicons/react/24/outline';
 
@@ -37,7 +37,7 @@ const ProductItem: React.FC<SaleProductItemProps> = ({ product }) => {
         <Image 
           fill
           src={featured_image} 
-          className="w-full h-full transform transition duration-700 group-hover:scale-110" 
+          className="w-full h-full object-cover transform transition duration-700 group-hover:scale-110" 
           blurDataURL={featured_image}
           placeholder="blur"
           alt={name}

@@ -1,5 +1,3 @@
-import { ProductTypes } from '../types';
-
 export interface ProductImage {
   // id: number;
   src: string;
@@ -19,14 +17,4 @@ export interface Product {
   rating: number;
   stock: number;
   images: ProductImage[];
-}
-
-export interface FetchProductById {
-  type: ProductTypes.fetchProductById;
-  payload: Product;
-}
-
-export interface FetchProductsByIds {
-  type: ProductTypes.fetchProductsByIds;
-  payload: Product[];
 }

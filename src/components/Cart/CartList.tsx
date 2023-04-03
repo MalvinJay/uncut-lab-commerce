@@ -1,5 +1,5 @@
 import React from 'react'
-import { Cart } from '../../actions';
+import { Cart } from '@/src/interfaces';
 import CartItem from './CartItem';
 
 interface CartListProps {

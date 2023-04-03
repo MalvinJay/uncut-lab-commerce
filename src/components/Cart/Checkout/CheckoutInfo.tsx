@@ -54,7 +54,7 @@ const CheckoutInfo: React.FC = () => {
                 </div>
                 <div>
                     <label htmlFor="zip_postcode" className='font-semibold'>Zip / Postcode</label>
-                    <input name="town_city" placeholder="" className='w-full h-10 mt-2 text-base px-3 border border-gray-300 outline-none' type="text" />
+                    <input name="zip_postcode" placeholder="" className='w-full h-10 mt-2 text-base px-3 border border-gray-300 outline-none' type="text" />
                 </div>
             </div>
             <div className='col-start-1 col-end-3 pt-2 pb-5 border-b border-gray-200'>
@@ -69,8 +69,8 @@ const CheckoutInfo: React.FC = () => {
                 <input name="time" placeholder="00:00" className='w-full h-10 mt-2 text-base px-3 border border-gray-300 outline-none' type="time" />
             </div>            
             <div className='col-start-1 col-end-3'>
-                <label htmlFor="town_city" className='font-semibold'>Description</label>
-                <textarea rows={5} name="town_city" placeholder="" className='w-full mt-2 text-base px-3 border border-gray-300 outline-none' type="text" />
+                <label htmlFor="description" className='font-semibold'>Description</label>
+                <textarea rows={5} name="description" placeholder="" className='w-full mt-2 text-base px-3 border border-gray-300 outline-none' />
             </div>
             <div className='col-start-2 col-end-3 flex justify-end'>
                 <button className="w-full md:w-3/4 mt-6 bg-[#579d81] py-2 font-medium text-white text-lg hover:bg-opacity-90"

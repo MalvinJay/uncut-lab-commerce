@@ -2,7 +2,7 @@ import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { Figtree } from 'next/font/google'
 
-import Layout from '@/src/components/Layout/AppLayout/AppLayout';
+import Layout from '@/src/components/Layout/AppLayout/AppLayout'
 
 const figtree = Figtree({
   subsets: ['latin'],
@@ -10,7 +10,7 @@ const figtree = Figtree({
   style: ['normal'],
 });
 
-export default function App({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
   return (
     <Layout>
       <main className={figtree.className}>
@@ -19,3 +19,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </Layout>
   )
 }
+
+export default App;

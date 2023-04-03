@@ -1,5 +1,5 @@
 import React from 'react'
-import { Cart } from '@/src/actions';
+import { Cart } from '@/src/interfaces';
 import Image from 'next/image';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import SelectListbox from '../common/SelectListbox/SelectListBox';

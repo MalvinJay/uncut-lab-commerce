@@ -1,8 +1,8 @@
 import React from 'react'
+import type { NextPage } from 'next';
 import Head from 'next/head'
-import { orderList } from '@/src/reducers/orders'
+import { orderList } from '@/src/data/orders'
 
-import AppLayout from '@/src/components/Layout/AppLayout/AppLayout'
 import BreadCrumb from '@/src/components/common/Breadcrumb/Breadcrumb'
 import OrderList from '@/src/components/Orders/OrdersList'
 
@@ -19,7 +19,7 @@ const breadcrumbList = [
   }
 ];
 
-const Cart = () => {
+const Cart: NextPage = () => {
   return (
     <>
       <Head>

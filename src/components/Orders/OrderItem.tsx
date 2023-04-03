@@ -1,5 +1,5 @@
 import React from 'react'
-import { Order } from '@/src/actions';
+import { Order } from '@/src/interfaces';
 import Image from 'next/image';
 
 interface CartItemProps {
