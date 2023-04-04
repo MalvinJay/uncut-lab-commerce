@@ -105,8 +105,8 @@ export const company = [
 ];
 export const contact = [
     {
-        name: "(617) 775-7865",
-        link: "tel:+6177757865"
+        name: "+1 (617) 775-7865",
+        link: "tel:+16177757865"
     },
     {
         name: "support@mail.com",
