@@ -32,12 +32,12 @@ const CartItem: React.FC<CartItemProps> = ({ order }) => {
 
     return (
         <div className='sm:flex items-center justify-between sm:gap-x-4 lg:gap-x-0 p-5 border border-gray-200 overflow-y-hidden hover:bg-slate-50 cursor-pointer'>
-            <div className='relative w-full sm:w-auto h-[17rem] sm:h-28'>
+            <div className='relative w-full sm:w-auto'>
                 <Image
                     src={image?.src}
                     width={100}
                     height={150}
-                    className="w-full h-full object-cover bg-gray-100 transition duration-700"
+                    className="w-full h-full sm:w-auto sm:h-auto object-cover bg-gray-100 transition duration-700"
                     alt={name} 
                 />
             </div>
