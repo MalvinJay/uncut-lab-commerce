@@ -27,7 +27,7 @@ const CartItem: React.FC<CartItemProps> = ({ order }) => {
 
     const handleRepeatOrder = () => {
         dispatch(repeatOrder({ ...order, order_id: uuid()?.slice(0,8) }))
-        toast.success('Order repeated', { duration: 3000 });
+        toast.success('Order duplicated!', { duration: 3000 });
     }
 
     return (

@@ -27,9 +27,13 @@ const Dropdown: React.FC<DropdownInterface> = ({
                         leaveTo="opacity-0 translate-y-1"
                     >
                         <Popover.Panel className={`${position} ${dropdownWidth} absolute z-[100] mt-3 mr-10 transform px-4 sm:px-0`}>
-                            <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                                {children}
-                            </div>
+                            {({ close }) => (
+                                <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5"
+                                    onClick={() => { close() }}
+                                >
+                                    {children}
+                                </div>
+                            )}
                         </Popover.Panel>
                     </Transition>
                 </>
