@@ -39,7 +39,7 @@ const CartItem: React.FC<CartItemProps> = ({ cart, confirmRemove }) => {
     return (
         <div className="sm:flex justify-between bg-white py-8 border-b border-gray-200">
             <div className='sm:flex items-start '>
-                <div className='relative w-full sm:w-56 h-40'>
+                <div className='relative w-full sm:w-56 h-[17rem] sm:h-40'>
                     <Image
                         src={image?.src}
                         width={132}
@@ -56,11 +56,11 @@ const CartItem: React.FC<CartItemProps> = ({ cart, confirmRemove }) => {
                         <p>Category: {category}</p>
                     </div>
 
-                    <div className='relative'>
+                    <div className='relative mt-4 md:mt-0'>
                         {/* <SelectListbox list={quantityList} styles="w-16 h-8" /> */}
                         <select 
                             onChange={handleOnChange}
-                            defaultValue={quantity} className='font-semibold w-16 h-8 border border-gray-300 pl-1 text-left focus:outline-none'
+                            defaultValue={quantity} className='font-semibold w-1/2 md:w-16 h-8 border border-gray-300 pl-1 text-left focus:outline-none'
                         >
                             {quantityList.map(el => (
                                 <option value={el.value} key={el.id}>{el.name}</option>
@@ -71,7 +71,7 @@ const CartItem: React.FC<CartItemProps> = ({ cart, confirmRemove }) => {
             </div>
 
             <div className="flex pt-4 sm:pt-0 sm:flex-col justify-between">
-                <p className="text-xl font-bold text-black text-end">{currency}{price}</p>
+                <p className="text-2xl md:text-xl font-bold text-black text-end">{currency}{price}</p>
                 
                 <div className="inline-flex items-center space-x-1 cursor-pointer p-1 hover:bg-gray-100"
                     onClick={() => confirmRemove(cart)}

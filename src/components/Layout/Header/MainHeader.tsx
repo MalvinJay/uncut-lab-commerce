@@ -67,7 +67,7 @@ const MainHeader = () => {
 
 
 
-                {/* <div className="space-y-6 border-t border-gray-200 px-4 py-6">
+                <div className="space-y-6 border-t flex flex-col items-center h-full border-gray-200 px-4 py-6">
                   <div className="flow-root">
                     <Link href="/" className="-m-2 block p-2 font-medium text-gray-900">
                       Sign in
@@ -78,7 +78,7 @@ const MainHeader = () => {
                       Create account
                     </Link>
                   </div>
-                </div> */}
+                </div>
               </Dialog.Panel>
             </Transition.Child>
           </div>
@@ -140,7 +140,7 @@ const MainHeader = () => {
                 />
               </Link>
 
-              <div className='relative pl-2 md:pl-16 lg:pl-32'>
+              <div className='hidden md:block relative pl-2 md:pl-16 lg:pl-32'>
                 <Dropdown
                   position="-translate-x-1/4"
                   dropdownButton={
@@ -157,7 +157,7 @@ const MainHeader = () => {
 
             <div className="ml-auto flex items-center">
               {/* Cart */}
-              <div className="mr-4 flow-root lg:mr-12">
+              <div className="mr-5 flow-root lg:mr-12">
                 <Link href="/cart" className="relative group -m-2 flex items-center p-3">
                   <Image 
                     src="/assets/images/shopping-bag.png"

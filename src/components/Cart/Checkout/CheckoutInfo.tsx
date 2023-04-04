@@ -129,9 +129,9 @@ const CheckoutInfo: React.FC<SummaryListProps> = ({ List }) => {
             </div>            
             <div className='col-start-1 col-end-3'>
                 <label htmlFor="description" className='font-semibold'>Description</label>
-                <textarea id="description" rows={5} name="description" placeholder="" className='w-full mt-2 text-base px-3 border border-gray-300 outline-none' />
+                <textarea id="description" rows={5} name="description" placeholder="" className='w-full mt-2 text-base p-3 border border-gray-300 outline-none' />
             </div>
-            <div className='col-start-2 col-end-3 flex justify-end'>
+            <div className='col-start-1 md:col-start-2 col-end-3 flex justify-end'>
                 <button className="w-full md:w-3/4 mt-6 bg-[#579d81] py-2 font-medium text-white text-lg hover:bg-opacity-90"
                     onClick={handlePlaceOrder}
                 >

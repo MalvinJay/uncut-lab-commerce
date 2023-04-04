@@ -10,7 +10,7 @@ const SummaryList: React.FC<SummaryListProps> = ({ List }) => {
     return (
         <section className='grid grid-cols gap-y-4 p-6 border-b border-gray-300 appear'>
             {List.map((item) => (
-                <div key={item.id} className='sm:flex items-start p-4 border border-gray-300'>
+                <div key={item.id} className='flex items-start p-4 border border-gray-300'>
                     <Image
                         src={item.image.src}
                         width={100}
@@ -20,7 +20,7 @@ const SummaryList: React.FC<SummaryListProps> = ({ List }) => {
                         alt={item.name}
                     />
 
-                    <div className="sm:ml-5">
+                    <div className="ml-5">
                         <div className="mt-5 sm:mt-0 text-base text-gray-500 font-semibold space-y-1">
                             <h2 className="text-lg text-gray-900 font-bold">{item.name}</h2>
                             <p>Weight: {item.weight}</p>
