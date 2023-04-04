@@ -2,7 +2,20 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First and foremost, you'll need to have npm installed on the computer that you're working on. Without that, there's no way to install the prerequisite libraries and projects. You can download Node and npm for your project at [Node.js](https://nodejs.org/), then perform the following steps:
+
+Find the appropriate installer package for your computer and operating system for Node and NPM at [Node.js](https://nodejs.org/) and follow the instructions provided by the installer.
+Install an appropriate code editor or Interactive Development Environment (IDE). I've had the best experiences with Visual Studio Code, so that gets my personal recommendation, but you can use anything you're comfortable with!
+Once you've installed Node ...
+
+Now, install project dependencies by running
+
+```bash
+npm install
+# or
+yarn
+
+Then, run the development server:
 
 ```bash
 npm run dev
