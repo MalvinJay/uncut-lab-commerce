@@ -44,7 +44,7 @@ const ProductItem: React.FC<SaleProductItemProps> = ({ product }) => {
 
   return (
     <figure className='w-full block relative group appear'>
-      <div className={`absolute left-0 z-10 ml-4 mt-4 py-2 px-6 text-base text-white ${stock > 0 ? 'bg-[#1bc18f]':'bg-[#ff7060]'}`}>{tag}</div>
+      <div className={`absolute left-0 z-10 ml-4 mt-4 py-1 px-3 text-base text-white ${stock > 0 ? 'bg-[#1bc18f]':'bg-[#ff7060]'}`}>{tag}</div>
 
       <div className='relative w-full h-[14rem] overflow-hidden bg-gray-300'>
         <Image 
