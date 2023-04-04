@@ -78,7 +78,7 @@ const MainFooter = () => {
           <div className="mt-3 grid space-y-3 text-base font-medium">
             {contact.map((el) => (
               <p key={el.name}>
-                {el.type ? 
+                {!el.link ? 
                   <span className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
                     {el.name}
                   </span>

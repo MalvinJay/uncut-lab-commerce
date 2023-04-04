@@ -59,6 +59,8 @@ const CartItem: React.FC<CartItemProps> = ({ cart, confirmRemove }) => {
                     <div className='relative mt-4 md:mt-0'>
                         {/* <SelectListbox list={quantityList} styles="w-16 h-8" /> */}
                         <select 
+                            name="quantity"
+                            id="quantity"
                             onChange={handleOnChange}
                             defaultValue={quantity} className='font-semibold w-1/2 md:w-16 h-8 border border-gray-300 pl-1 text-left focus:outline-none'
                         >

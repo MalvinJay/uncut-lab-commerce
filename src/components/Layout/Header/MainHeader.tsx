@@ -149,6 +149,8 @@ const MainHeader = () => {
                       <ChevronDownIcon className="w-6" aria-hidden="true" />
                     </div>
                   }
+                  dropdownWidth=""
+                  triggerState=""
                 >
                   <div className="relative bg-white p-5"></div>
                 </Dropdown>
@@ -193,7 +195,7 @@ const MainHeader = () => {
                           alt={el.name} 
                         />
                         
-                        {el.action === 'logout' ?
+                        {!el.link ?
                           <div className='w-full cursor-pointer' onClick={handleLogout('logout')}>
                             {el.name}
                           </div> 

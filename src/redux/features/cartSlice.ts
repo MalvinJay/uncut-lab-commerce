@@ -54,7 +54,7 @@ export const cartSlice = createSlice({
     clearCart: (state, action: PayloadAction<[]>) => {
       state.items = []
     },
-    updateOrderSummary: (state, action: PayloadAction<Cart>) => {
+    updateOrderSummary: (state, action: PayloadAction<SummaryInfo>) => {
       state.summary = { ...state.summary, ...action.payload}
     }
   },

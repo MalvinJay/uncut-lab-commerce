@@ -3,12 +3,12 @@
  */
 export const topMenus = [
     {
-      name: "Pick Up",
-      route: "/pick-up"
+        name: "Pick Up",
+        route: "/pick-up"
     },
     {
-      name: "FAQ",
-      route: "/faq"
+        name: "FAQ",
+        route: "/faq"
     }
 ];
 export const socials = [
@@ -141,14 +141,14 @@ export const sortList = [
 */
 export const homeBreadcrumb = [
     {
-      id: 1,
-      name: "Home",
-      link: "/"
+        id: 1,
+        name: "Home",
+        link: "/"
     },
     {
-      id: 2,
-      name: "Products",
-      link: "/products"
+        id: 2,
+        name: "Products",
+        link: "/products"
     },
 ];
 
@@ -208,14 +208,14 @@ export const countries = [
         id: 1,
         name: 'United State',
         value: 'US',
-        unavailable: false    
+        unavailable: false
     },
     {
         id: 2,
         name: 'United Kingdom',
         value: 'UK',
         unavailable: false
-    },    
+    },
     {
         id: 3,
         name: 'Germany',
@@ -226,7 +226,7 @@ export const countries = [
         id: 4,
         name: 'Ghana',
         value: 'GH',
-        unavailable: false  
+        unavailable: false
     }
 ];
 
@@ -235,8 +235,22 @@ export const states = [
         id: 1,
         name: 'MA',
         value: 'ma',
-        unavailable: false    
+        unavailable: false
     }
 ];
 
+// Form validations
+export const validationFields = [
+ "firstname",
+ "lastname",
+ "email",
+ "phone_number",
+ "address",
+ "town_city",
+ "country",
+ "state",
+ "zip_postcode",
+ "date",
+ "time"
+]
 

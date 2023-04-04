@@ -30,10 +30,10 @@ const Order: NextPage = () => {
   useEffect(() => {
     // fetch all cached orders
     try {
-      const cachedOrders = localStorage.getItem("orders");
+      const cachedOrders: string = localStorage.getItem("orders") || '';
 
       if (cachedOrders || !cachedOrders?.includes('undefined')) {
-        const List = JSON.parse(cachedOrders) || [];
+        const List = JSON.parse(cachedOrders);
         if (List.length)
         dispatch(setOrders(List))
       }
