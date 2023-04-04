@@ -116,6 +116,10 @@ a {
   transition: opacity 1s, visibility 1s;
 }
 
+.product--items-caption {
+  height: calc(100% - 14rem)!important;
+}
+
 @keyframes appear {
   from { opacity: 0 }
   to { opacity: 1 }

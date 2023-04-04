@@ -43,8 +43,8 @@ const ProductItem: React.FC<SaleProductItemProps> = ({ product }) => {
   }
 
   return (
-    <figure className='w-full block relative group appear'>
-      <div className={`absolute left-0 z-10 ml-4 mt-4 py-1 px-3 text-base text-white ${stock > 0 ? 'bg-[#1bc18f]':'bg-[#ff7060]'}`}>{tag}</div>
+    <figure className='w-full h-full flex flex-col justify-between relative group appear border border-gray-300'>
+      <div className={`absolute left-0 z-10 ml-4 mt-4 py-1 px-2 text-base text-white ${stock > 0 ? 'bg-[#1bc18f]':'bg-[#ff7060]'}`}>{tag}</div>
 
       <div className='relative w-full h-[14rem] overflow-hidden bg-gray-300'>
         <Image 
@@ -57,15 +57,17 @@ const ProductItem: React.FC<SaleProductItemProps> = ({ product }) => {
         />
       </div>
 
-      <figcaption className='text-center p-5 border border-gray-300'>
-        <span className='capitalize text-sm font-semibold pb-3 text-gray-600'>{category}</span>
-        <p className='text-lg font-bold leading-tight px-6'>{name}</p>
-        <p className='text-xl font-bold py-1'>{currency}<span>{price}</span></p>
-        <div className='inline-flex items-center pb-3'>
-          {new Array(5).fill('').map((i, index) => (
-            <StarIcon fill={index < rating ? '#1bc18f' : "#fff"} className="w-5 text-[#1bc18f]" aria-hidden="true" key={index} />
-          ))}
-          <span className='pl-2 text-base text-[#1bc18f]' style={{ paddingTop: '2px' }}>13</span>
+      <figcaption className='text-center p-5 flex flex-col justify-between product--items-caption'>
+        <div>
+          <span className='capitalize text-sm font-semibold pb-3 text-gray-600'>{category}</span>
+          <p className='text-lg font-bold leading-tight px-2'>{name}</p>
+          <p className='text-xl font-bold py-1'>{currency}<span>{price}</span></p>
+          <div className='inline-flex items-center pb-3'>
+            {new Array(5).fill('').map((i, index) => (
+              <StarIcon fill={index < rating ? '#1bc18f' : "#fff"} className="w-5 text-[#1bc18f]" aria-hidden="true" key={index} />
+            ))}
+            <span className='pl-2 text-base text-[#1bc18f]' style={{ paddingTop: '2px' }}>13</span>
+          </div>
         </div>
 
         <button 
